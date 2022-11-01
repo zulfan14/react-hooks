@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import KegiatanList from "./components/KegiatanList";
 import ProductList from "./components/ProductList";
 import UserLIst from "./components/UserLIst";
 function App() {
-  const [title, setTitle] = useState("Welcome To React HOOKS");
-  const [number, setNumber] = useState(10);
+  const [title] = useState("Welcome To React HOOKS");
+  // const [number, setNumber] = useState(10);
   const link = "https://github.com/zulfan14/";
 
   const [products, setProducts] = useState([
@@ -25,12 +26,7 @@ function App() {
     { id: 2, nama: "makan", jam: 11 },
   ]);
 
-  const [nama, setNama] = useState("Zulfan");
-
-  const Change = () => {
-    setTitle("Title Changed");
-    setNumber(number + 1);
-  };
+  const [nama] = useState("Zulfan");
 
   const deleteUsers = (userId) => {
     const newUser = users.filter((user) => user.id !== userId);
@@ -52,12 +48,29 @@ function App() {
 
   return (
     <div>
-      <Header />
       <h1>{title}</h1>
-      <h1>{number}</h1>
-      <a href={link} target="blank">
-        Go To my repo github
-      </a>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Header />}></Route>
+          <Route
+            path="/user"
+            element={<UserLIst usersList={users} deleteUsers={deleteUsers} />}
+          ></Route>
+          <Route
+            path="/kegiatan"
+            element={<KegiatanList kegiatanList={kegiatans} />}
+          ></Route>
+          <Route
+            path="/product"
+            element={
+              <ProductList
+                products={products}
+                actionProducts={actionProducts}
+              />
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
       {/*  
       <ul>
         {products.map((product) => (
@@ -67,23 +80,12 @@ function App() {
         ))}
       </ul>
         */}
-      <ProductList products={products} actionProducts={actionProducts} />
-      <h1>Ini adalah nama2 pengguna</h1>
-      <UserLIst usersList={users} deleteUsers={deleteUsers} />
       {/* <button onClick={() => ClickMe("Zulfan")}>Click Me</button> */}
-      <button onClick={Change}>Change</button>
-
-      <h1>Ini adalah Jadwal kegiatan</h1>
-      <KegiatanList kegiatanList={kegiatans} />
-      <h1>Namanya : {nama}</h1>
-
-      <button
-        onClick={() => {
-          setNama("Muhammad Zulfan");
-        }}
-      >
-        Ganti Nama
-      </button>
+      <h1>Namanya : {nama}</h1>(
+      <a href={link} target="blank">
+        Go To my repo github
+      </a>
+      )
     </div>
   );
 }
