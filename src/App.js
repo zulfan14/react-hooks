@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import KegiatanList from "./components/KegiatanList";
 import ProductList from "./components/ProductList";
 import UserLIst from "./components/UserLIst";
 function App() {
@@ -19,6 +20,13 @@ function App() {
     { id: 3, name: "Ani", jk: "pr" },
   ]);
 
+  const [kegiatans] = useState([
+    { id: 1, nama: "belajar", jam: 10 },
+    { id: 2, nama: "makan", jam: 11 },
+  ]);
+
+  const [nama, setNama] = useState("Zulfan");
+
   const Change = () => {
     setTitle("Title Changed");
     setNumber(number + 1);
@@ -33,6 +41,9 @@ function App() {
     const newProducts = products.filter((product) => product.id !== productid);
     setProducts(newProducts);
   };
+
+  useEffect(() => console.log("Use Effect Running"), [nama]);
+
   // {
   //   const ClickMe = (name) => {
   //     console.log("Cliked By " + name);
@@ -61,6 +72,18 @@ function App() {
       <UserLIst usersList={users} deleteUsers={deleteUsers} />
       {/* <button onClick={() => ClickMe("Zulfan")}>Click Me</button> */}
       <button onClick={Change}>Change</button>
+
+      <h1>Ini adalah Jadwal kegiatan</h1>
+      <KegiatanList kegiatanList={kegiatans} />
+      <h1>Namanya : {nama}</h1>
+
+      <button
+        onClick={() => {
+          setNama("Muhammad Zulfan");
+        }}
+      >
+        Ganti Nama
+      </button>
     </div>
   );
 }
