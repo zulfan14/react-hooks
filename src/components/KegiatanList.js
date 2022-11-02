@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const KegiatanList = ({ kegiatanList }) => {
+const KegiatanList = () => {
+  const [kegiatanList, setKegiatan] = useState([]);
+
+  useEffect(() => {
+    fecthData();
+  }, []);
+
+  const fecthData = async () => {
+    const response = await fetch("http://localhost:8080/kegiatan");
+    const data = await response.json();
+    setKegiatan(data);
+  };
+
   return (
     <div>
       <ul>

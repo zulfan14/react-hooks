@@ -1,0 +1,17 @@
+{
+  "products": [
+    { "id": 1, "title": "product1", "price": 899 },
+    { "id": 2, "title": "Product2", "price": 879 },
+    { "id": 3, "title": "Product3", "price": 869 }
+  ],
+  "users": [
+    { "id": 1, "nama": "Andi", "jk": "lk" },
+    { "id": 2, "nama": "Ani", "jk": "pr" },
+    { "id": 3, "nama": "Budi", "jk": "lk" },
+    { "id": 4, "nama": "Ana", "jk": "pr" }
+  ],
+  "kegiatan": [
+    { "id": 1, "nama": "belajar", "jam": 10 },
+    { "id": 2, "nama": "makan", "jam": 11 }
+  ]
+}
