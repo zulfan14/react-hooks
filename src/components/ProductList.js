@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const ProductList = () => {
+  <h1>Ini adalah Daftar Produk</h1>;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -15,17 +16,29 @@ const ProductList = () => {
     // console.log(data);
   };
 
-  console.log(fecthData());
-
   return (
     <div>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.title} - {product.price} <button>Delete Product</button>
-          </li>
-        ))}
-      </ul>
+      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <th>NO</th>
+          <th>NAMA</th>
+          <th>HARGA</th>
+          <th>AKSI</th>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={product.id}>
+              <td>{index + 1}</td>
+              <td>{product.nama}</td>
+              <td>{product.price}</td>
+              <td>
+                <button className="button is-small is-info mr-2">Edit</button>
+                <button className="button is-small is-danger">Hapus</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const UserLIst = () => {
+  <h1>Ini Adalah Daftar User</h1>;
   const [usersList, setUsers] = useState([]);
 
   useEffect(() => {
@@ -15,15 +16,29 @@ const UserLIst = () => {
 
   return (
     <div>
-      <h3>Ini Adalah Nama UserLIst</h3>
-      <ul>
-        {usersList.map((user) => (
-          <li key={user.id}>
-            {user.nama} - {user.jk}
-            <button>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <th>NO</th>
+          <th>NAMA</th>
+          <th>JENIS KELAMIN</th>
+          <th>AKSI</th>
+        </thead>
+        <tbody>
+          {usersList.map((user, index) => (
+            <tr key={user.id}>
+              <td>{user.index}</td>
+              <td>{user.nama}</td>
+              <td>{user.jk}</td>
+              <td>
+                <button className="button is-small is-info">Edit</button>
+                <button className="button is-small is-danger ml-2">
+                  Hapus
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
