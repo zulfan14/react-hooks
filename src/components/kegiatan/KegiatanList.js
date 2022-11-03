@@ -18,10 +18,12 @@ const KegiatanList = () => {
       <h1>Ini adalah Daftar Kegiatan</h1>
       <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
-          <th>No</th>
-          <th>NAMA</th>
-          <th>HARGA</th>
-          <th>AKSI</th>
+          <tr>
+            <th>No</th>
+            <th>NAMA</th>
+            <th>HARGA</th>
+            <th>AKSI</th>
+          </tr>
         </thead>
         <tbody>
           {kegiatanList.map((kegiatan, index) => (

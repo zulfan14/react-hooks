@@ -4,23 +4,23 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        class="navbar is-primary"
+        className="navbar is-primary"
         role="navigation"
         aria-label="main navigation"
       >
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a href="http://localhost:3000/" class="navbar-item">
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
+            <a href="http://localhost:3000/" className="navbar-item">
               Home
             </a>
 
-            <a href="http://localhost:3000/user" class="navbar-item">
+            <a href="http://localhost:3000/user" className="navbar-item">
               User
             </a>
-            <a href="http://localhost:3000/product" class="navbar-item">
+            <a href="http://localhost:3000/product" className="navbar-item">
               Product
             </a>
-            <a href="http://localhost:3000/kegiatan" class="navbar-item">
+            <a href="http://localhost:3000/kegiatan" className="navbar-item">
               Kegiatan
             </a>
           </div>

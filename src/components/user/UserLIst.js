@@ -18,15 +18,17 @@ const UserLIst = () => {
     <div>
       <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
-          <th>NO</th>
-          <th>NAMA</th>
-          <th>JENIS KELAMIN</th>
-          <th>AKSI</th>
+          <tr>
+            <th>NO</th>
+            <th>NAMA</th>
+            <th>JENIS KELAMIN</th>
+            <th>AKSI</th>
+          </tr>
         </thead>
         <tbody>
           {usersList.map((user, index) => (
             <tr key={user.id}>
-              <td>{user.index}</td>
+              <td>{index + 1}</td>
               <td>{user.nama}</td>
               <td>{user.jk}</td>
               <td>

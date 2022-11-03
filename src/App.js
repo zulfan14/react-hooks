@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import KegiatanList from "./components/KegiatanList";
 import Navbar from "./components/Navbar";
-import ProductList from "./components/ProductList";
-import UserLIst from "./components/UserLIst";
+import KegiatanList from "./components/kegiatan/KegiatanList";
+import ProductList from "./components/product/ProductList";
+import UserLIst from "./components/user/UserLIst";
+import AddProduct from "./components/product/AddProduct";
+import AddUser from "./components/user/AddUser";
+import AddKegiatan from "./components/kegiatan/AddKegiatan";
 function App() {
   const [title] = useState("Welcome To React HOOKS");
   // const [number, setNumber] = useState(10);
@@ -28,6 +31,9 @@ function App() {
           <Route path="/user" element={<UserLIst />}></Route>
           <Route path="/kegiatan" element={<KegiatanList />}></Route>
           <Route path="/product" element={<ProductList />}></Route>
+          <Route path="/addproduct" element={<AddProduct />}></Route>
+          <Route path="/adduser" element={<AddUser />}></Route>
+          <Route path="/addkegiatan" element={<AddKegiatan />}></Route>
         </Routes>
       </BrowserRouter>
       <h1>Namanya : {nama}</h1>(
