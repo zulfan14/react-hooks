@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "product1",
-      "price": 899
+      "title": "product1 Updated 2.0",
+      "price": "1000",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Product2",
-      "price": 879
+      "title": "Product2 Updated",
+      "price": "900",
+      "id": 2
     },
     {
       "id": 3,
@@ -23,14 +23,14 @@
   ],
   "users": [
     {
-      "id": 1,
-      "nama": "Andi",
-      "jk": "lk"
+      "nama": "Andi update 3.0",
+      "jk": "lk",
+      "id": 1
     },
     {
-      "id": 2,
-      "nama": "Ani",
-      "jk": "pr"
+      "nama": "Ani Update 2.0",
+      "jk": "pr",
+      "id": 2
     },
     {
       "id": 3,

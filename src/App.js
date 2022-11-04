@@ -8,6 +8,8 @@ import UserLIst from "./components/user/UserLIst";
 import AddProduct from "./components/product/AddProduct";
 import AddUser from "./components/user/AddUser";
 import AddKegiatan from "./components/kegiatan/AddKegiatan";
+import EditProduct from "./components/product/EditProduct";
+import EditUser from "./components/user/EditUser";
 function App() {
   const [title] = useState("Welcome To React HOOKS");
   // const [number, setNumber] = useState(10);
@@ -22,25 +24,29 @@ function App() {
   // }
 
   return (
-    <div className="container mt-4">
+    <div>
       <Navbar />
-      <h1>{title}</h1>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Header />}></Route>
-          <Route path="/user" element={<UserLIst />}></Route>
-          <Route path="/kegiatan" element={<KegiatanList />}></Route>
-          <Route path="/product" element={<ProductList />}></Route>
-          <Route path="/addproduct" element={<AddProduct />}></Route>
-          <Route path="/adduser" element={<AddUser />}></Route>
-          <Route path="/addkegiatan" element={<AddKegiatan />}></Route>
-        </Routes>
-      </BrowserRouter>
-      <h1>Namanya : {nama}</h1>(
-      <a href={link} target="blank">
-        Go To my repo github
-      </a>
-      )
+      <div className="container mt-4">
+        <h1>{title}</h1>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Header />}></Route>
+            <Route path="/user" element={<UserLIst />}></Route>
+            <Route path="/kegiatan" element={<KegiatanList />}></Route>
+            <Route path="/product" element={<ProductList />}></Route>
+            <Route path="/addproduct" element={<AddProduct />}></Route>
+            <Route path="/adduser" element={<AddUser />}></Route>
+            <Route path="/addkegiatan" element={<AddKegiatan />}></Route>
+            <Route path="/editproduct/:id" element={<EditProduct />}></Route>
+            <Route path="/edituser/:id" element={<EditUser />}></Route>
+          </Routes>
+        </BrowserRouter>
+        <h1>Namanya : {nama}</h1>(
+        <a href={link} target="blank">
+          Go To my repo github
+        </a>
+        )
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, List } from "react-router-dom";
 
 const UserLIst = () => {
   <h1>Ini Adalah Daftar User</h1>;
@@ -32,7 +33,12 @@ const UserLIst = () => {
               <td>{user.nama}</td>
               <td>{user.jk}</td>
               <td>
-                <button className="button is-small is-info">Edit</button>
+                <Link
+                  to={`/edituser/${user.id}`}
+                  className="button is-small is-info"
+                >
+                  Edit
+                </Link>
                 <button className="button is-small is-danger ml-2">
                   Hapus
                 </button>
